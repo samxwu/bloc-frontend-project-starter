@@ -1,1 +1,10 @@
-<h1>Home Page</h1>
+<section>
+   <nav class="left-panel-container">
+       <div class="logo">
+           <img src="assets/images/BlocChatLogo2.png" alt="Bloc Chat Logo">
+       </div>
+          <div ng-repeat="room in home.rooms">
+                <a class="room-links">{{ room.$id }}</a>
+          </div>
+     </nav>
+ </section>

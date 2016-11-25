@@ -6,18 +6,18 @@
                 requireBase: false
             });
         
-        $stateProvider
+         $stateProvider
             .state('home', {
                 url: '/',
                 controller: 'HomeCtrl as home',
                 templateUrl: '/templates/home.html'
             });
-            
+          
     }
 
     
 angular
-    .module('blocChat',['firebase', 'ui.router'])
+    .module('blocChat',['firebase', 'ui.router', 'ui.bootstrap'])
     .config(config);
     
 })();

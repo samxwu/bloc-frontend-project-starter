@@ -5,12 +5,20 @@
         var ref = firebase.database().ref().child("rooms");
         var rooms = $firebaseArray(ref);
         
+        Room.all = rooms;
+        Room.roomName = null;
+        
+        
+        
         Room.addRoom = function(childName, value){
             ref.child(childName).set(value);
             };
         
-        Room.all = rooms;
-     
+        Room.openRoom = function(){
+            var roomInfo = event.target;
+            Room.roomName = roomInfo.innerHTML;
+        };
+        
         
         //return { all: rooms };
         return Room;

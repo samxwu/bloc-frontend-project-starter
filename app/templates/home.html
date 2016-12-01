@@ -1,10 +1,13 @@
-<section>
-   <nav class="left-panel-container">
-       <div class="logo">
-           <img src="assets/images/BlocChatLogo2.png" alt="Bloc Chat Logo">
-       </div>
-          <div ng-repeat="room in home.rooms">
-                <a class="room-links">{{ room.$id }}</a>
-          </div>
-     </nav>
- </section>
+<section class="container">
+    <h3>{{home.room.roomName}}</h3>
+    <div class="message-format" ng-repeat="message in home.message.selectedRoom">
+        <span style="font-weight:bold">{{message.username}}</span> 
+        <span style="font-size: 1rem; float: right">{{message.sentAt}}</span> <br>
+        <span style="font-size: 1.2rem">{{message.content}}</span> <br>
+    </div>
+</section>
+
+
+
+
+

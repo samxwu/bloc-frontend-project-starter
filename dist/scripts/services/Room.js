@@ -30,5 +30,3 @@
         .factory('Room', ['$firebaseArray', Room]);
 })();
 
-
-

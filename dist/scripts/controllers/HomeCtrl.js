@@ -11,6 +11,4 @@
     angular
         .module('blocChat')
         .controller('HomeCtrl', ['Room', 'Message', HomeCtrl]);
-    
-    
 })();

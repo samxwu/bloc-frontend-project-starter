@@ -4,7 +4,7 @@
     $ctrl.room = null;
     $ctrl.animationsEnabled = true;
   
-   $ctrl.open = function () {
+    $ctrl.open = function () {
       
     var modalInstance = $uibModal.open({
       animation: $ctrl.animationsEnabled,
@@ -14,9 +14,6 @@
       controller: function ($uibModalInstance, room, Room) {
                       var $ctrl = this;
                       $ctrl.room = room;
-                      $ctrl.selected = {
-                        room: $ctrl.room
-                      };
 
                       $ctrl.ok = function () {
                           $ctrl.room = this.room;
@@ -30,10 +27,7 @@
                   },
       
       controllerAs: '$ctrl',
-      resolve: {
-        room: function () {
-          return $ctrl.room;
-        }
+      resolve: {room: function () {return $ctrl.room;}
       }        
     });
        
@@ -48,9 +42,5 @@
     .module('blocChat')
     .controller('makeChatRoomCtrl', ['$uibModal', 'Room', makeChatRoomCtrl]);
 })();
-
-
-
-
 
 

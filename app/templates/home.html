@@ -1,8 +1,27 @@
 <section class="container">
     <h3>{{home.room.roomName}}</h3>
-    <div class="message-format" ng-repeat="message in home.message.selectedRoom">
-        <span style="font-weight:bold">{{message.username}}</span> 
-        <span style="font-size: 1rem; float: right">{{message.sentAt}}</span> <br>
-        <span style="font-size: 1.2rem">{{message.content}}</span> <br>
+    <div class="scrollit">
+    <table class="message-format" ng-repeat="message in home.message.selectedRoom">
+        <tr>
+        <td>
+            <span style="font-weight:bold;">{{message.username}}</span>
+            <span style="font-size: 1rem; float: right;">{{message.sentAt}}</span>
+        </td>
+        </tr>
+        <tr>
+        <td><span style="font-size: 1.2rem;">{{message.content}}</span></td>
+        </tr>
+    </table> 
     </div>
+</section>
+
+<section class="container-text-area">
+        <br>
+        <textarea class="message-text-area" ng-model="home.message.content" placeholder="Write your message here...">
+        </textarea>
+    
+        <button class="message-send-btn" type="button" ng-click="home.message.submitMessage(home.message.content, home.room.roomName, home.currentUser)">
+            <img src="assets/images/BlocChatSendIcon.png" alt="bloc chat send icon">
+            <!--<span style="font-weight: bold; font-size: 1.5rem;">>></span>-->
+        </button>
 </section>

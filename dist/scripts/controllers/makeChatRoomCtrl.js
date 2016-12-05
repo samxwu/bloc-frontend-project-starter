@@ -14,6 +14,7 @@
       controller: function ($uibModalInstance, room, Room) {
                       var $ctrl = this;
                       $ctrl.room = room;
+
                       $ctrl.ok = function () {
                           $ctrl.room = this.room;
                           Room.addRoom($ctrl.room, $ctrl.room);
@@ -41,4 +42,5 @@
     .module('blocChat')
     .controller('makeChatRoomCtrl', ['$uibModal', 'Room', makeChatRoomCtrl]);
 })();
+
 
